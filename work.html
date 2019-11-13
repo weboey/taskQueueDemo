@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  var worker = new Worker('./work.js');
+  var obj= {
+    name:'qq:123',
+    add: function (a,b) {
+    }
+  }
+
+  worker.addEventListener('message', function(e) {
+    console.log('Worker said: ', e.data);
+  }, false);
+
+  worker.postMessage(obj); // Send data to our
+
+</script>
+</html>
